@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대광로제비앙</title>
+    <link href="css/main.css" rel="stylesheet" />
+
+    <script src="lib/jquery-3.6.1.js"></script>
+    <script>
+
+
+        $(function () {
+            $('.pc_gnb .depth01').mouseover(function () {
+                $(this).children('.depth02').stop().slideDown(300);
+            });
+            $('.pc_gnb .depth01').mouseleave(function () {
+                $(this).children('.depth02').stop().slideUp(300);
+            });
+
+            $('.open').click(function () {
+                $('.mobile_gnb').addClass('on');
+            });
+            $('.close').click(function () {
+                $('.mobile_gnb').removeClass('on');
+            })
+
+            //모바일메뉴 (아코디언메뉴)
+            //1차메뉴를 클릭했을 때 2차메뉴가 슬라이드다운
+            //다른 1차메뉴 클릭 시 열려있는 2차메뉴는 슬라이드 업
+
+            $('.mobile_gnb .depth01>a').click(function () {
+                if ($(this).next().css('display') == 'none') {
+                    $('.depth02').slideUp();
+                    $(this).next('.depth02').slideDown();
+                    $('a').removeClass('on');
+                    $(this).addClass('on');
+
+                    // 클릭한 a태그한테 글자색 변경하기
+                    $('.mobile_gnb .depth01>a').css('color', '#333');
+                    $(this).css('color', '#7a6955');
+                }
+
+                else {
+                    $(this).next('.depth02').slideUp();
+                    $(this).removeClass('on');
+
+                    $(this).css({ 'color': '#333' });
+                }
+            })
+
+
+
+
+
+
+        }); //jquery end
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <h1>
+                <a href="#">대광로제비앙</a>
+            </h1>
+            <nav class="pc pc_gnb">
+                <ul>
+                    <li class="depth01">
+                        <a href="#">회사소개</a>
+                        <ul class="depth02">
+                            <li><a href="#">CEO인사말</a></li>
+                            <li><a href="#">회사연혁</a></li>
+                            <li><a href="#">VISION</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                    <li class="depth01">
+                        <a href="#">사업영역</a>
+                        <ul class="depth02">
+                            <li><a href="#">주택사업</a></li>
+                            <li><a href="#">건축 토목사업</a></li>
+                            <li><a href="#">조경 기타사업</a></li>
+                            <li><a href="#">호텔사업</a></li>
+                            <li><a href="#">금융사업</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                    <li class="depth01">
+                        <a href="#">분양단지</a>
+                        <ul class="depth02">
+                            <li><a href="#">분양단지</a></li>
+                            <li><a href="#">분양예정단지</a></li>
+                            <li><a href="#">주택청약안내</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                    <li class="depth01">
+                        <a href="#">공사 입주단지</a>
+                        <ul class="depth02">
+                            <li><a href="#">공사단지</a></li>
+                            <li><a href="#">입주단지</a></li>
+                            <li><a href="#">입주가이드</a></li>
+                            <li><a href="#">입주예약</a></li>
+                            <li><a href="#">입주예약조회</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                    <li class="depth01">
+                        <a href="#">BRAND</a>
+                        <ul class="depth02">
+                            <li><a href="#">새소식</a></li>
+                            <li><a href="#">CI/BI</a></li>
+                            <li><a href="#">수상실적</a></li>
+                            <li><a href="#">광고센터</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                    <li class="depth01">
+                        <a href="#">고객센터</a>
+                        <ul class="depth02">
+                            <li><a href="#">고객센터안내</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">자주하는질문</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                </ul>
+            </nav><!-- pc_gnb end -->
+            <ul class="user_gnb pc">
+                <li><a href="#">검색</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">로그인</a></li>
+            </ul><!-- user_gnb end -->
+
+            <!-- ---------------모바일메뉴 영역------------- -->
+
+            <i class="mobile open"><span>메뉴보기</span></i>
+            <nav class="mobile mobile_gnb">
+                <ul class="user_gnb">
+                    <li><a href="#">검색</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li class="close"><a href="#">메뉴닫기</a></li>
+                    <li><a href="#">로그인</a></li>
+                </ul><!-- user_gnb end -->
+
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">회사소개</a>
+                        <ul class="depth02">
+                            <li><a href="#">CEO인사말</a></li>
+                            <li><a href="#">회사연혁</a></li>
+                            <li><a href="#">VISION</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                    <li class="depth01">
+                        <a href="#">사업영역</a>
+                        <ul class="depth02">
+                            <li><a href="#">주택사업</a></li>
+                            <li><a href="#">건축 토목사업</a></li>
+                            <li><a href="#">조경 기타사업</a></li>
+                            <li><a href="#">호텔사업</a></li>
+                            <li><a href="#">금융사업</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                    <li class="depth01">
+                        <a href="#">분양단지</a>
+                        <ul class="depth02">
+                            <li><a href="#">분양단지</a></li>
+                            <li><a href="#">분양예정단지</a></li>
+                            <li><a href="#">주택청약안내</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                    <li class="depth01">
+                        <a href="#">공사 입주단지</a>
+                        <ul class="depth02">
+                            <li><a href="#">공사단지</a></li>
+                            <li><a href="#">입주단지</a></li>
+                            <li><a href="#">입주가이드</a></li>
+                            <li><a href="#">입주예약</a></li>
+                            <li><a href="#">입주예약조회</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                    <li class="depth01">
+                        <a href="#">BRAND</a>
+                        <ul class="depth02">
+                            <li><a href="#">새소식</a></li>
+                            <li><a href="#">CI/BI</a></li>
+                            <li><a href="#">수상실적</a></li>
+                            <li><a href="#">광고센터</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                    <li class="depth01">
+                        <a href="#">고객센터</a>
+                        <ul class="depth02">
+                            <li><a href="#">고객센터안내</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">자주하는질문</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+                </ul>
+            </nav><!-- pc_gnb end -->
+        </div><!-- inner end -->
+    </header>
+    <section class="main_visual">
+        메인비주얼제작하기
+
+    </section><!-- main_visual end -->
+
+</body>
+
+</html>
