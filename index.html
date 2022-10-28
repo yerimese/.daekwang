@@ -51,7 +51,19 @@
                 }
             })
 
+            //about 탭메뉴
 
+            $('.tab_menu li').click(function () {
+                $('.tab_cont').removeClass('on');
+                $('.tab_cont').eq($(this).index()).addClass('on');
+                console.log($(this).index())
+
+                $('.tab_menu li').removeClass('on');
+                $('.tab_menu li').eq($(this).index()).addClass('on');
+                $('.bg div').hide();
+                $('.bg div').eq($(this).index()).show();
+
+            });
 
 
 
@@ -202,9 +214,50 @@
         </div><!-- inner end -->
     </header>
     <section class="main_visual">
-        메인비주얼제작하기
-
+        <img class="pc" src="img/3024499621_OqTbcDfM_vis1.jpg">
+        <img class="mobile" src="img/3024499621_3cjyRzwS_m-vis1.jpg">
     </section><!-- main_visual end -->
+    <section class="quick_menu">
+        <ul class="inner">
+            <li><a href="#">QUICK MENU</a></li>
+            <li><a href="#">입주예약</a></li>
+            <li><a href="#">입주가이드</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul><!-- inner end -->
+    </section>
+
+    <section class="about">
+        <div class="inner">
+            <h3>ABOUT US</h3>
+            <ul class="tab_menu">
+                <li class="on">대광건영</li>
+                <li>대광로제비앙</li>
+
+            </ul> <!-- tab_menu end -->
+            <div class="tabs">
+                <div class="tab_cont on">
+                    <p>대광은 고객 중심 주택문화를<br />
+                        실현하기 위해 노력합니다.</p>
+                    <a href="#">기업 소개 바로가기</a>
+                </div> <!-- tab_cont end -->
+
+                <div class="tab_cont">
+                    <p>고품격 주거 문화를 리드하는<br />
+                        대광로제비앙입니다.</p>
+                    <a href="#">브랜드 소개 바로가기</a>
+
+                </div> <!-- tab_cont end -->
+
+            </div><!-- tabs end -->
+
+        </div><!-- inner end -->
+
+        <div class="bg">
+            <div class="bg1"><span>대광건영 이미지</span></div>
+            <div class="bg2"><span>대광로제비앙 이미지</span></div>
+
+        </div><!-- bg end -->
+    </section><!-- about end -->
 
 </body>
 
